@@ -8,11 +8,17 @@
 require 'faker'
 
 
-500.times do
-  Book.create!(
-    title: Faker::Book.title, 
-    author: Faker::Book.author, 
-    description: Faker::Book.genre,
-    url: Faker::Internet.url
-  )
+# 500.times do
+#   Book.create!(
+#     title: Faker::Book.title, 
+#     author: Faker::Book.author, 
+#     description: Faker::Book.genre,
+#     url: Faker::Internet.url
+#   )
+
+  50.times do
+    User.create!(
+      name: Faker::Name.name
+    )
+
 end
