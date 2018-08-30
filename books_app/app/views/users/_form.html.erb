@@ -13,18 +13,18 @@
         <li><%= msg %></li>
       <% end %>
     </ul>
+
   </div>
 <% end %>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
- 
 
-  <p>
-    <%= form.submit %>
-  </p>
-
+  
+  <%=label_tag :name %>
+  <%=text_field_tag :name %>
+  <%=label_tag :password %>
+  <%=password_field_tag :password %>
+  <%=submit_tag "Create Account" %>
  
 <% end %>
+
+

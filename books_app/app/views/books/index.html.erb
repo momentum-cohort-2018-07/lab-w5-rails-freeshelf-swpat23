@@ -2,8 +2,11 @@
 
 <h1>All Available Books</h1>
 
-<h2><%= link_to 'Add a New User', new_user_path %></h2>
 <h2><%= link_to 'Add a New Book', new_book_path %></h2>
+
+<% if current_user %>
+  <%= link_to 'Log Out', sessions_path, method: :delete %>
+<% end %>
 
 
 <table>
@@ -12,6 +15,7 @@
     <th>Author</th>
     <th>Description</th>
     <th>URL</th>
+    <td>User ID</td>
   </tr>
  
   <% @books.each do |book| %>
@@ -20,6 +24,7 @@
       <td><%= book.author %></td>
       <td><%= book.description %></td>
       <td><%= book.url %></td>
+      <td><%= book.user_id%></td>
       <td><%= link_to 'Show', book_path(book) %></td>
       <td><%= link_to 'Edit', edit_book_path(book) %></td>
       <td><%= link_to 'Delete', book_path(book),

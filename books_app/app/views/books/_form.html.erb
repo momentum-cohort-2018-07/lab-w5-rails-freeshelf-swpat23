@@ -46,5 +46,8 @@
     <%= form.submit %>
   </p>
 
+  <% if current_user %>
+  <%= link_to 'Log Out', sessions_path, method: :delete %>
+  <% end %>
  
 <% end %>

@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<% if current_user %>
+  <%= link_to 'Log Out', sessions_path, method: :delete %>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -21,10 +25,11 @@
 </p>
 
 <p>
-  <strong>User ID:</strong>
+  <strong>User_ID:</strong>
   <%= @book.user_id %>
 </p>
 
  
 <%= link_to 'Edit', edit_book_path(@book) %>
 <%= link_to 'Back', books_path %>
+
